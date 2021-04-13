@@ -1,5 +1,3 @@
-package StackOverflow;
-
 import java.io.IOException;
 
 public interface Register {

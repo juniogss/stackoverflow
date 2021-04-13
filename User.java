@@ -1,5 +1,3 @@
-package StackOverflow;
-
 import java.io.*;
 
 public class User implements Register {

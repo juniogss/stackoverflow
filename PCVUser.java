@@ -1,4 +1,3 @@
-package StackOverflow;
 
 import java.io.*;
 

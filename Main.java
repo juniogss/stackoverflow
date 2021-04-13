@@ -1,4 +1,3 @@
-package StackOverflow;
 
 import java.io.File;
 import java.util.Scanner;
@@ -12,6 +11,9 @@ public class Main {
         Scanner console = new Scanner(System.in);
 
         try {
+            File d = new File("db");
+            if (!d.exists()) d.mkdir();
+
             File userFile = new File(USER_PATH);
             if (!userFile.exists()) userFile.mkdir();
 
