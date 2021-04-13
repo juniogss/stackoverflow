@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 
 public class CRUD<T extends Register> {
 
-    private static final String USER_PATH = "db/user";
+    private static final String USER_PATH = "db/user/";
     private final HashExtensivel<PCVUser> hashUser;
     protected RandomAccessFile file;
     Constructor<T> constructor;
@@ -13,7 +13,7 @@ public class CRUD<T extends Register> {
         this.constructor = constructor;
         file = new RandomAccessFile(fileName, "rw");
         file.writeInt(0);
-        hashUser = new HashExtensivel<>(PCVUser.class.getConstructor(), 5, USER_PATH + ".hash_d.db", USER_PATH + ".hash_c.db");
+        hashUser = new HashExtensivel<>(PCVUser.class.getConstructor(), 5, USER_PATH + "hash_d.db", USER_PATH + "hash_c.db");
     }
 
     public void close() throws Exception {

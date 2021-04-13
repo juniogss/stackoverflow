@@ -3,8 +3,8 @@ import java.io.File;
 import java.util.Scanner;
 
 public class Main {
-    private static final String USER_PATH = "db/user";
-    private static final String EMAIL_PATH = "db/email";
+    private static final String USER_PATH = "db/user/";
+    private static final String EMAIL_PATH = "db/email/";
 
     public static void main(String[] args) {
 
@@ -20,14 +20,14 @@ public class Main {
             File emailFile = new File(EMAIL_PATH);
             if (!emailFile.exists()) emailFile.mkdir();
 
-            new File(USER_PATH + ".db").delete();
-            new File(USER_PATH + ".hash_d.db").delete();
-            new File(USER_PATH + ".hash_c.db").delete();
-            new File(EMAIL_PATH + ".hash_c.db").delete();
-            new File(EMAIL_PATH + ".hash_c.db").delete();
+            new File(USER_PATH + "user.db").delete();
+            new File(USER_PATH + "hash_d.db").delete();
+            new File(USER_PATH + "hash_c.db").delete();
+            new File(EMAIL_PATH + "hash_c.db").delete();
+            new File(EMAIL_PATH + "hash_c.db").delete();
 
-            CRUD<User> userCRUD = new CRUD<>(User.class.getConstructor(), USER_PATH + ".db");
-            HashExtensivel<PCVEmail> hashEmail = new HashExtensivel<>(PCVEmail.class.getConstructor(), 4, EMAIL_PATH + ".hash_d.db", EMAIL_PATH + ".hash_c.db");
+            CRUD<User> userCRUD = new CRUD<>(User.class.getConstructor(), USER_PATH + "user.db");
+            HashExtensivel<PCVEmail> hashEmail = new HashExtensivel<>(PCVEmail.class.getConstructor(), 4, EMAIL_PATH + "hash_d.db", EMAIL_PATH + "hash_c.db");
 
             int option;
             do {
